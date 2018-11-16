@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>思沃银行信用卡申请表</title>
+</head>
+
+<body>
+    <form action="/echo" method="POST">
+        <fieldset>
+            <legend>思沃银行信用卡申请表</legend>
+            <fieldset>
+                <legend>公司资料</legend>
+                <p>
+                    单位名称：<input type="text" name="company_name" placeholder="请输入单位名称">
+                </p>
+                <p>
+                    邮政编码：<input type="number" name="postcode" placeholder="请输入邮政编码">
+                </p>
+                <p>
+                    联系人：<input type="text" name="linkman" placeholder="请输入联系人">
+                </p>
+                <p>
+                    电话：<input type="tel" name="company_tel" placeholder="请输入联系电话">
+                </p>
+                <p>
+                    注册地点：<input type="text" name="company_location" placeholder="请输入注册地点">
+                </p>
+                <p>
+                    注册期限年月至：<input type="date" name="regis_ddl">
+                </p>
+                <p>
+                    注册号码：<input type="number" name="regis_num" placeholder="请输入注册号码">
+                </p>
+                <p>
+                    所有制：
+                    <input type="radio" name="ownership" value="public" checked>公有制
+                    <input type="radio" name="ownership" value="private">私有制
+                    <input type="radio" name="ownership" value="public_private">公私合营
+                </p>
+                <p>
+                    往来银行名称及账号：
+                    <select name="bank_name">
+                        <option value="bank_name">银行名称</option>
+                        <option value="bank_name">浦发银行</option>
+                        <option value="bank_name">中国银行</option>
+                    </select>
+                    <input type="number" name="bank_account" placeholder="账号">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>主持卡人资料</legend>
+                <p>
+                    姓名：<input type="text" name="primcardholder_name" placeholder="请输入姓名">
+                </p>
+                <p>
+                    性别：
+                    <input type="radio" name="primcardholder_sex" value="male">男
+                    <input type="radio" name="primcardholder_sex" value="female">女
+                </p>
+                <p>
+                    出生年月：<input type="month" name="primcardholder_bmonth">
+                </p>
+                <p>
+                    工作证号码：<input type="number" name="employeecard_num" placeholder="请输入工作证号码">
+                </p>
+                <p>
+                    年收入：<input type="number" name="annual_income">元
+                </p>
+                <p>
+                    住宅地址：<input type="text" name="primcardholder_address" placeholder="请输入住宅地址">
+                </p>
+                <p>
+                    入住时间：<input type="date" name="checkin_time">
+                </p>
+                <p>
+                    住宅方式：
+                    <input type="radio" name="house" value="male">自建
+                    <input type="radio" name="house" value="female">按揭
+                    <input type="radio" name="house" value="male">亲属
+                    <input type="radio" name="house" value="female">租用
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>附属卡持卡人资料</legend>
+                <p>
+                    姓名：<input type="text" name="supcardholder_name" placeholder="请输入姓名">
+                </p>
+                <p>
+                    性别：
+                    <input type="radio" name="supcardholder_sex" value="male">男
+                    <input type="radio" name="supcardholder_sex" value="female">女
+                </p>
+                <p>
+                    出生年月：<input type="month" name="supcardholder_bmonth">
+                </p>
+                <p>
+                    住宅地址：<input type="text" name="supcardholder_address" placeholder="请输入住宅地址">
+                </p>
+            </fieldset>
+        </fieldset>
+    </form>
+</body>
+
+</html>
