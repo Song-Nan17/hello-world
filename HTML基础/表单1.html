@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>一个注册表单</title>
+</head>
+
+<body>
+    <form action="/echo" method="POST">
+        <p>
+            账号： <input type="text" name="user_id" placeholder="请输入想注册的账号">
+        </p>
+        <p>
+            密码： <input type="password" name="password" placeholder="请设置您账号的登入密码">
+        </p>
+        <p>
+            验证码：<input type="text" name="validate_code" placeholder="请输入六位验证码">
+        </p>
+        <p>
+            性别：
+            <input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女
+        </p>
+        <p>
+            玩过什么游戏：
+            <input type="checkbox" name="game" value="LOL">英雄联盟
+            <input type="checkbox" name="game" value="CF">穿越火线
+            <input type="checkbox" name="game" value="WOW">魔兽世界
+            <input type="checkbox" name="game" value="OW">守望先锋
+        </p>
+        <select name="year">
+            <option value="year">年</option>
+            <option value="year">2008</option>
+            <option value="year">2009</option>
+            <option value="year">2010</option>
+            <option value="year">2011</option>
+            <option value="year">2012</option>
+        </select>
+        <p>
+            <input type="button" value="按钮">
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </p>
+    </form>
+</body>
+
+</html>
