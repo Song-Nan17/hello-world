@@ -1,0 +1,59 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <style>
+        div {
+            margin: 0px;
+            border: 1px solid rgb(113, 210, 248);
+            background-color: white;
+            padding: 0px;
+            text-align: left;
+        }
+
+        div p {
+            margin: 0px;
+            border: 1px solid rgb(113, 210, 248);
+            background-color: rgb(245, 144, 104);
+            padding: 0px;
+            text-align: left;
+        }
+
+        #demo1 p[name="classify"],
+        #demo2 p[name="visitor"] {
+            margin: 5px;
+            border: 2px solid white;
+            background-color: white;
+            padding: 0px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo1">
+        <p>源码分类</p>
+        <p name="classify">
+            <a href="https://www.baidu.com">ASP</a>(1)
+        </p>
+        <p name="classify">
+            <a href="https://www.baidu.com">PHP</a>(0)
+        </p>
+        <p name="classify">
+            <a href="https://www.baidu.com">JSP</a>(1)
+        </p>
+    </div>
+    <div id="demo2">
+        <p>访客</p>
+        <p name="visitor">
+            暂无访客
+        </p>
+        <p name="visitor">
+            <a href="https://www.baidu.com">登录</a>后您的头像会在这里。
+        </p>
+    </div>
+</body>
+
+</html>
