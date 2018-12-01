@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>定时器示例</title>
+</head>
+
+<body>
+
+    <input type="text" id="result">
+
+    <input type="button" value="开始">
+    <input type="button" value="结束">
+
+    <script>
+        var oResult = document.getElementsByTagName("input")[0];
+        var oStart = document.getElementsByTagName("input")[1];
+        var oStop = document.getElementsByTagName("input")[2];
+        var n = 0, timer = null;
+        oStart.onclick = function () {
+            clearInterval(timer); // ?
+            timer = setInterval(function () {
+                n++;
+                var m = parseInt(n / 600)
+                var s = parseInt((n % 600) / 10);
+                var ss = parseInt(n % 10);
+                oResult.value = toDub(m) + ':' + toDub(s) + '.' + ss; // 我看到我手机的秒表这样显示时间，所以也这样显示了。
+            }, 1000 / 10); // 1ms=1000s,将1s分为10分来计
+        };
+        oStop.onclick = function () {
+            clearInterval(timer);
+        }
+        // 补零
+        function toDub(n) {
+            if (n < 10) {
+                return '0' + n;
+            }
+            return n;
+        }
+    </script>
+</body>
+
+</html>
