@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+</head>
+
+<body>
+  <span>用户名：</span>
+  <input type="text" id="username" />
+  <br />
+  <span>密 码：</span>
+  <input type="password" id="password" />
+  <br />
+  <button type="button" id="myBtn">登录</button>
+  <span id="hint"></span>
+
+  <script type="text/javascript">
+    var oUsername = document.getElementById("username");
+    var oPassword = document.getElementById("password");
+    var oLogin = document.getElementById("myBtn");
+
+    oLogin.onclick = function () {
+      if (oUsername.value == '123' && oPassword.value == '123') {
+        document.getElementById("hint").innerHTML = "登陆成功！";
+        document.getElementById("hint").style.color = "green";;
+      } else {
+        oPassword.value = '';
+        document.getElementById("hint").innerHTML = "用户名或密码有误！";
+        document.getElementById("hint").style.color = "red";
+      }
+    }
+
+  </script>
+</body>
+
+</html>
