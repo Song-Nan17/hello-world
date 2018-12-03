@@ -14,32 +14,35 @@
     <input type="button" value="结束">
 
     <script>
-        var oResult = document.getElementsByTagName("input")[0];
-        var oStart = document.getElementsByTagName("input")[1];
-        var oStop = document.getElementsByTagName("input")[2];
-        var n = 0, timer = null;
-        oStart.onclick = function () {
-            // clearInterval(timer);
-            timer = setInterval(function () {
-                n++;
-                var m = parseInt(n / 600)
-                var s = parseInt((n % 600) / 10);
-                var ss = parseInt(n % 10);
-                oResult.value = toDub(m) + ':' + toDub(s) + '.' + ss; // 我看到我手机的秒表这样显示时间，所以也这样显示了。
-                oStart.disabled = true;
-            }, 1000 / 10); // 1ms=1000s,将1s分为10分来计
-        };
-        oStop.onclick = function () {
-            clearInterval(timer);
-            oStart.disabled = false;
-        }
-        // 补零
-        function toDub(n) {
-            if (n < 10) {
-                return '0' + n;
+        function timerExample(start, stop, result) {
+            var time = 0, timer = null;
+            start.onclick = function () {
+                // clearInterval(timer);
+                timer = setInterval(function () {
+                    time++;
+                    var minute = parseInt(time / 600)
+                    var second = parseInt((time % 600) / 10);
+                    var tenthOfSecond = parseInt(time % 10);
+                    result.value = toDub(minute) + ':' + toDub(second) + '.' + tenthOfSecond; // 我看到我手机的秒表这样显示时间，所以也这样显示了。
+                    start.disabled = true;
+                }, 1000 / 10); // 1ms=1000s,将1s分为10分来计
+            };
+            stop.onclick = function () {
+                clearInterval(timer);
+                start.disabled = false;
             }
-            return n;
+            // 补零
+            function toDub(n) {
+                if (n < 10) {
+                    return '0' + n;
+                }
+                return n;
+            }
         }
+        var result = document.getElementById("result");
+        var startTimer = document.getElementsByTagName("input")[1];
+        var stopTimer = document.getElementsByTagName("input")[2];
+        timerExample(startTimer, stopTimer, result);
     </script>
 </body>
 

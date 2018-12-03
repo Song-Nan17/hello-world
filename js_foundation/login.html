@@ -13,25 +13,27 @@
   <span>密 码：</span>
   <input type="password" id="password" />
   <br />
-  <button type="button" id="myBtn">登录</button>
+  <button type="button" id="login">登录</button>
   <span id="hint"></span>
 
   <script type="text/javascript">
-    var oUsername = document.getElementById("username");
-    var oPassword = document.getElementById("password");
-    var oLogin = document.getElementById("myBtn");
-
-    oLogin.onclick = function () {
-      if (oUsername.value == '123' && oPassword.value == '123') {
-        document.getElementById("hint").innerHTML = "登陆成功！";
-        document.getElementById("hint").style.color = "green";;
-      } else {
-        oPassword.value = '';
-        document.getElementById("hint").innerHTML = "用户名或密码有误！";
-        document.getElementById("hint").style.color = "red";
+    function userLogin() {
+      login.onclick = function () {
+        if (username.value == '123' && password.value == '123') {
+          hint.innerHTML = "登陆成功！";
+          hint.style.color = "green";;
+        } else {
+          password.value = '';
+          hint.innerHTML = "用户名或密码有误！";
+          hint.style.color = "red";
+        }
       }
     }
-
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var login = document.getElementById("login");
+    var hint = document.getElementById("hint");
+    userLogin();
   </script>
 </body>
 

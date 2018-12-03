@@ -19,12 +19,17 @@
     </ul>
 
     <script type="text/javascript">
-        var oUl = document.getElementById("no");
-        oUl.onclick = function (event) {
-            if (event.target.tagName.toLowerCase() === 'li') {
-                alert(event.target.innerHTML);
+
+        function toAlertLi(ul) {
+            ul.onclick = function (event) {
+                if (event.target.tagName.toLowerCase() === 'li') {
+                    alert(event.target.innerHTML);
+                }
             }
         }
+        var ul = document.getElementById("no");
+        toAlertLi(ul);
+
     </script>
 </body>
 
