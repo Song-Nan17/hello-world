@@ -172,6 +172,8 @@ for (var i = 1; i <= 9; i++) {
 // 
 // 将一个字符串逆序输出。
 // 
+
+// 循环语句
 function reverseString(message) {
     var i = message.length - 1;
     var str = '';
@@ -182,10 +184,17 @@ function reverseString(message) {
     return str;
 }
 reverseString('hello');
+// 数组/字符串方法
+function reverseString(message) {
+    return message.split('').reverse().join('');
+}
+reverseString('hello');
 
 // 
 //判断一个字符串是否是回文串。
 // 
+
+//for循环 
 function palindrome(message) {
     var i = 0, j = message.length - 1;
     for (i, j; i < j; i++ , j--) {
@@ -198,6 +207,13 @@ function palindrome(message) {
 palindrome('hello'); // should return false
 palindrome('abcba'); // should return true
 
+// 数组方法
+function palindrome(message) {
+    var reversed = message.split('').reverse().join('');
+    return message === reversed
+}
+palindrome('abcba');
+palindrome('hello');
 // 
 // 计算出一个字符串共有多少个单词组成。
 // 
@@ -213,9 +229,34 @@ countWords('Good morning, I love JavaScript.'); // should return 5
 // 
 function alphabetSort(message) {
     var strArray = message.split('');
-    var sortArray = strArray.sort(function (x, y) {
-        return x.localeCompare(y);
-    });
+    var sortArray = strArray.sort();
     return sortArray.join('');
 }
 alphabetSort('hello');
+
+
+// 
+// 数组求和
+var collection_a =[10,27,28,19,5];
+function reducer(accumulator, currentValue) {
+    return accumulator + currentValue;
+}
+console.log(collection_a.reduce(reducer));
+
+// 
+// 找出数组中的偶数
+function isEven(element) {
+    return element % 2 == 0;
+}
+var collection_a = [2, 5, 6, 9, 8, 10];
+console.log(collection_a.filter(isEven));
+
+// 
+// 找出两个数组相同的元素
+var collection_a = [2, 5, 6, 9, 8, 10];
+var collection_b = [3, 2, 6, 8, 9, 12];
+function isInclude(element) {
+    return collection_b.includes(element);
+}
+var collection_c = collection_a.filter(isInclude);
+console.log(collection_c);
