@@ -12,11 +12,13 @@
   <input type="button" id="plus" value="+">
 
   <script>
-    function clickCounter() {// 判断浏览器是否支持localStorage && 刷新页面，顶部数字不归零
+    function clickCounter() {
+      // 判断浏览器是否支持localStorage && 刷新页面，顶部数字不归零
+      var result = document.getElementById("result");
       if (typeof (Storage) !== "undefined") {
-        document.getElementById("result").innerHTML = localStorage.clickcount;
+        result.innerHTML = localStorage.clickcount;
       } else {
-        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        result.innerHTML = "Sorry, your browser does not support web storage...";
       }
       // 数字初始值为0
       if (!localStorage.clickcount) {
@@ -26,7 +28,7 @@
       var plus = document.getElementById("plus");
       plus.onclick = function () {
         localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        document.getElementById("result").innerHTML = localStorage.clickcount;
+        result.innerHTML = localStorage.clickcount;
       }
     }
     // localStorage.clear();
