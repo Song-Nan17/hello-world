@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>clickCounter</title>
+</head>
+
+<body>
+
+  <p id="result"></p>
+  <input type="button" id="plus" value="+">
+
+  <script>
+    function clickCounter() {// 判断浏览器是否支持localStorage && 刷新页面，顶部数字不归零
+      if (typeof (Storage) !== "undefined") {
+        document.getElementById("result").innerHTML = localStorage.clickcount;
+      } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+      // 数字初始值为0
+      if (!localStorage.clickcount) {
+        localStorage.clickcount = 0;
+      }
+      // 每点击一次按钮，数字加1
+      var plus = document.getElementById("plus");
+      plus.onclick = function () {
+        localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        document.getElementById("result").innerHTML = localStorage.clickcount;
+      }
+    }
+    // localStorage.clear();
+    clickCounter();
+  </script>
+</body>
+
+</html>
