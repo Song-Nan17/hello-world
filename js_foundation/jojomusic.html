@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jojomusic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    var ajax = {
+      request: function (url, method, mycallback, data) {
+        var xhr = null;
+        xhr = new XMLHttpRequest();
+        xhr.open(method, url, true);
+        if (method == "post") {
+          xhr.send(data);
+        } else {
+          xhr.send(null);
+        }
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200){
+            mycallback(xhr);
+          }
+        }
+      }
+    }
+
+    function getMusic() {
+      ajax.request(
+        "https://api.imjad.cn/cloudmusic/?type=song&id=28012031",
+        "get",
+        function myCallback(xhr) {
+          const response = JSON.parse(xhr.response);
+          document.getElementById("music").src = response.data[0].url;
+          document.getElementById("music").play();
+        });
+    }
+    
+    function getLyric() {
+      ajax.request(
+        "https://api.imjad.cn/cloudmusic/?type=lyric&id=28012031",
+        "get",
+        function myCallback(xhr) {
+          const response = JSON.parse(xhr.response);
+          document.getElementById("lyric").innerHTML = response.lrc.lyric;
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <audio src="music.mp3" id="music" controls onclick="getMusic()"></audio>
+  <button type="button" id="getLyric" onclick="getLyric()">歌词</button>
+  <p id="lyric"></p>
+</body>
+
+</html>
